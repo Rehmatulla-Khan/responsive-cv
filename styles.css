@@ -1,0 +1,409 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@200;300;400;500;700&display=swap");
+
+:root {
+  --main_bg: rgb(153, 194, 255);
+  --left_bg: rgb(0, 49, 71);
+  --icon: rgb(0, 115, 230);
+  --title: rgb(51, 133, 255);
+  --time: rgb(148, 148, 148);
+  --main_txt: rgb(51, 51, 51);
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+
+  background-color: var(--main_bg);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* container (wrapped around entire page) */
+#container {
+  margin: 50px;
+  padding: 0px;
+
+  min-height: 1200px;
+  width: 1000px;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-auto-rows: auto;
+
+  font-family: "IBM Plex Sans", sans-serif;
+
+  background-color: var(--left_bg);
+
+  grid-template-areas:
+    " pic pro"
+    " pic exp"
+    " contact exp"
+    " contact exp"
+    " edu exp"
+    "edu skills"
+    " lang abil"
+    ". abil";
+}
+
+/* grid area */
+.avatar {
+  grid-area: pic;
+}
+.contact_info {
+  grid-area: contact;
+}
+.education {
+  grid-area: edu;
+}
+.language {
+  grid-area: lang;
+}
+.profile {
+  grid-area: pro;
+}
+.exp {
+  grid-area: exp;
+}
+.skill {
+  grid-area: skills;
+}
+.ability {
+  grid-area: abil;
+}
+
+div.left_container {
+  height: 100%;
+  width: 100%;
+}
+
+.avatar {
+  margin: 0 auto;
+  padding-bottom: 20px;
+
+  text-align: center;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+
+  width: 90%;
+}
+
+/* avatar image */
+.avatar img {
+  margin: 20px 0;
+
+  width: 100%;
+  max-width: 300px;
+
+  border: 6px solid var(--white);
+  border-radius: 50%;
+  
+}
+
+h1 {
+  text-transform: uppercase;
+
+  font-size: 28px;
+
+  color: var(--white);
+}
+
+.avatar span {
+  font-size: 20px;
+  font-weight: 300;
+
+  color: var(--white);
+
+  text-transform: uppercase;
+}
+
+/* contact info section */
+.contact_info {
+  padding: 0 20px;
+}
+
+.title {
+  padding: 6px;
+
+  text-transform: uppercase;
+
+  font-weight: 500;
+  font-size: 20px;
+
+  color: var(--white);
+}
+
+.contact_info ul li {
+  list-style-type: none;
+
+  padding: 3px 0;
+
+  color: var(--white);
+
+  font-size: 18px;
+  font-weight: 300;
+}
+
+span.txt {
+  margin-left: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 1);
+}
+
+span.img {
+  color: var(--icon);
+}
+
+span.txt:hover {
+  text-decoration: underline;
+}
+
+.education ul li h5 {
+  color: var(--icon);
+}
+
+.education ul li h4:first-of-type {
+  font-weight: 500;
+}
+
+.education ul li h4:last-of-type {
+  font-weight: 300;
+  font-size: 16px;
+}
+
+li span.percent {
+  position: relative;
+
+  height: 6px;
+  width: 100%;
+
+  margin-top: 5px;
+  padding-top: 8px;
+
+  display: block;
+
+  background-color: #081921;
+}
+
+.percent div {
+  background-color: var(--icon);
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  height: 100%;
+}
+
+.light {
+  margin: 0 25px;
+  margin-top: 5px;
+
+  color: var(--left_bg);
+
+  font-weight: 700;
+  font-size: 25px;
+
+  border-bottom: 2px solid #081921;
+}
+
+/* profile info section */
+.right_container p {
+  padding: 10px 20px;
+
+  font-weight: 400;
+}
+
+div.profile {
+  padding: 0.5em 1em;
+
+  background-color: #fff;
+}
+
+.profile p {
+  margin-top: 0.4em;
+}
+
+div.exp {
+  display: flex;
+  flex-direction: column;
+
+  background-color: #fff;
+}
+
+div.skill {
+  background-color: #fff;
+}
+
+div.ability {
+  background-color: #fff;
+}
+
+/* experience */
+.company ul {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+
+  list-style-type: none;
+
+  min-width: 130px;
+
+  padding: 0 10px;
+
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--time);
+
+  line-height: 20px;
+}
+
+.company ul li {
+  margin: 10px 0;
+}
+
+div.details {
+  margin-left: 30px;
+  margin-right: 10px;
+
+  color: var(--main_txt);
+}
+
+.details h3 {
+  text-transform: uppercase;
+}
+
+.ability ul {
+  padding: 1em 0;
+}
+
+.skill ul,
+.ability ul {
+  list-style-type: none;
+
+  margin: 5px 20px;
+}
+
+/* skills section */
+.skill ul li span.percent {
+  background-color: var(--time);
+
+  height: 70%;
+}
+
+.skill ul li span.percent div {
+  height: 100%;
+}
+
+.skill ul li {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  grid-auto-rows: 40px;
+
+  padding-left: 10px;
+
+  align-items: center;
+}
+
+.skill ul li span.text {
+  text-transform: uppercase;
+
+  font-weight: 500;
+}
+
+/* ability section */
+.ability ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ability ul li {
+  margin: 3px 2px;
+  padding: 5px 10px;
+
+  border-radius: 30px;
+  border: 1px solid var(--left_bg);
+
+  font-weight: 400;
+}
+
+.ability ul li:hover {
+  color: #fff;
+
+  background-color: #081921;
+
+  transition: 0.5s;
+
+  cursor: default;
+}
+
+
+/* media queries */
+@media screen and (max-width: 930px) {
+  #container {
+    margin: 10px;
+
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: auto;
+    transition: 1s;
+
+    grid-template-areas:
+      " pic "
+      " contact"
+      " pro "
+      " exp"
+      "skills"
+      "edu"
+      "abil"
+      "lang";
+  }
+
+  .education {
+    filter: invert(1);
+    background-color: #000;
+  }
+  .education ul li h5 {
+    color: rgb(255 209 188);
+  }
+
+  .contact_info ul {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding-bottom: 15px;
+  }
+
+  .contact_info ul li {
+    margin-left: 20px;
+  }
+
+  .contact_info.language ul {
+    flex-direction: column;
+  }
+
+  .company ul {
+    flex-direction: column-reverse;
+    padding: 10px 30px;
+
+    line-height: 5px;
+  }
+
+  .skill ul li {
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 25px;
+  }
+  .ability ul li {
+    font-size: 15px;
+  }
+}
